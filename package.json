@@ -10,7 +10,7 @@
     "dev": "NODE_ENV=development webpack serve --open"
   },
   "keywords": [],
-  "author": "",
+  "author": "Kelsi Webb",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.21.8",

@@ -7,10 +7,10 @@ class Footer extends Component {
         <div className="form">
           <form>
             <p>Create A New Chain</p>
-            <label for="newChain" id="footerLabel">
+            <label htmlFor="newChainText" id="footerLabel">
               How many weeks until your event?
             </label>
-            <input type="text" id="newChain" name="newChain"></input>
+            <input type="text" id="newChainText" name="newChainText"></input>
             <input type="submit" value="Create Chain" id="footerButton"></input>
           </form>
         </div>
@@ -18,10 +18,10 @@ class Footer extends Component {
         <div className="form">
           <form>
             <p>Add A Reminder</p>
-            <label for="newChain" id="footerLabel">
+            <label htmlFor="newReminder" id="footerLabel">
               Give yourself a good reminder.
             </label>
-            <input type="text" id="newChain" name="newChain"></input>
+            <input type="text" id="newReminder" name="newReminder"></input>
             <input type="submit" value="Add Reminder" id="footerButton"></input>
           </form>
         </div>

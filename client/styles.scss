@@ -1,5 +1,19 @@
 #root {
   font-size: 16px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#app {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #db9828;
 }
 
 body {
@@ -15,7 +29,7 @@ body {
 #header {
   color: white;
   background-color: #db9828;
-  font-size: 1em;
+  font-size: 16px;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -58,25 +72,29 @@ body {
 
 #countdown-body {
   display: flex;
-  justify-content: center;
-}
-
-#main-section {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
 }
+
+// #main-section {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+// }
 
 #chain {
   display: flex;
   justify-content: center;
   color: white;
-  margin: 1.5rem 0 0 0;
+  margin-top: 22px;
 }
 
 .chain-link {
-  margin: 1em -10px;
+  margin: 15px -10px;
   background-color: transparent;
   box-shadow: inset 0px 4px 3px #dbdbd9, 0px 4px 3px #dbdbd9;
   padding: 12px 38px;
@@ -84,6 +102,8 @@ body {
   transition: 0.275s;
   color: white;
   cursor: pointer;
+  border: 10px solid #db9828;
+  border-width: 22px 2px;
 }
 
 .chain-link:hover {
@@ -94,20 +114,19 @@ body {
   padding: 3px 34px;
 }
 
-.chain-a {
-  border: 10px solid #db9828;
-  border-width: 22px 2px;
-}
-
 #current-week {
-  margin: 20px 200px 25px 200px;
+  margin: 16px;
+  width: 200px;
   color: white;
   background-color: #db9828;
-  /* border: 3px solid #d38c12; */
+  font-size: 40px;
+  font-family: 'Nunito Sans', sans-serif;
   border-radius: 50%;
-  padding: 110px;
+  padding: 100px 65px;
   text-align: center;
   box-shadow: 2px 4px 3px #dbdbd9;
+  display: flex;
+  justify-content: center;
 }
 
 #buttons-section {
@@ -116,7 +135,7 @@ body {
   margin: 1em;
 }
 
-button {
+#buttons-section button {
   background-color: #cd7029;
   border: 2px solid #cd7029;
   border-radius: 5px;
@@ -130,7 +149,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+#buttons-section button:hover {
   border: 2px solid #cd7029;
   background-color: white;
   color: #cd7029;
@@ -153,12 +172,28 @@ button:hover {
 }
 
 #footer p {
-  font-size: 20px;
+  font-size: 22px;
   margin: 5px;
+  color: #cd7029;
 }
 
 #footerLabel {
   margin-bottom: 5px;
+}
+
+input[type='text'] {
+  padding: 5px;
+  font-size: 15px;
+  color: #db9828;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+#newChainText:focus {
+  outline: none;
+}
+
+#newReminder:focus {
+  outline: none;
 }
 
 #footerButton {
@@ -171,6 +206,7 @@ button:hover {
   font-size: 16px;
   margin-top: 10px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 #footerButton:hover {
