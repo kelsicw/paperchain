@@ -18,7 +18,7 @@ class Chain extends Component {
     const chainLinks = [];
     let currentColor = 0;
 
-    for (let i = 0; i < this.props.totalWeeks; i++) {
+    for (let i = 0; i < this.props.weeksLeft; i++) {
       const style = {
         border: `10px solid ${chainLinkColors[currentColor]}`,
         borderWidth: '22px 2px',
@@ -26,7 +26,12 @@ class Chain extends Component {
 
       if (i > chainLinkColors.length - 1) currentColor = 0;
       chainLinks.push(
-        <ChainLink key={i} id={`chainLink${i + 1}`} style={style} />
+        <ChainLink
+          key={i}
+          id={`chainLink${i + 1}`}
+          style={style}
+          handleLinkClick={this.props.handleLinkClick}
+        />
       );
       currentColor++;
     }
