@@ -5,7 +5,8 @@ class CurrentWeek extends Component {
     // TODO: Instead of hard coding week 1 below, put logic here to make it change depending on the current state
     return (
       <div id="current-week">
-        Week <br />1
+        Week <br />
+        {this.props.currentWeek}
       </div>
     );
   }
