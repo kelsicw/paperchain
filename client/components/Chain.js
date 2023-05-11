@@ -6,6 +6,12 @@ class Chain extends Component {
 
   render() {
     const chainLinkColors = [
+      '#cd7029',
+      '#c77874',
+      '#45a6ab',
+      '#8cc7d0',
+      '#c9e3e3',
+      '#8f9261',
       '#db9828',
       '#cd7029',
       '#c77874',
@@ -13,6 +19,7 @@ class Chain extends Component {
       '#8cc7d0',
       '#c9e3e3',
       '#8f9261',
+      '#db9828',
     ];
 
     const chainLinks = [];
@@ -31,6 +38,7 @@ class Chain extends Component {
           id={`chainLink${i + 1}`}
           style={style}
           handleLinkClick={this.props.handleLinkClick}
+          // className="chainLink"
         />
       );
       currentColor++;

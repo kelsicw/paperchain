@@ -48,13 +48,27 @@ body {
   margin: -8px;
 }
 
+// #main-title-tag {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   margin: 0;
+// }
+
 #main-title {
-  /* flex-grow: 2; */
   text-align: center;
-  margin: 0.25em;
+  margin-top: 10px;
+  margin-bottom: 10px;
   font-size: 2.5rem;
   font-weight: 100;
   font-family: 'Jost', sans-serif;
+}
+
+#main-title-tag p {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-size: 18px;
 }
 
 #chain-icon {
@@ -70,7 +84,7 @@ body {
   font-family: 'Courier New', Courier, monospace;
 }
 
-#countdown-body {
+#countdownBody {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,18 +93,11 @@ body {
   height: 100%;
 }
 
-// #main-section {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-// }
-
 #chain {
   display: flex;
   justify-content: center;
   color: white;
-  margin-top: 22px;
+  margin-top: 10px;
 }
 
 .chain-link {
@@ -115,24 +122,59 @@ body {
 }
 
 #current-week {
-  margin: 16px;
-  width: 200px;
+  margin: 15px 0 5px 0;
+  width: 130px;
+  height: 90px;
   color: white;
   background-color: #db9828;
-  font-size: 40px;
+  // font-size: 30px;
   font-family: 'Nunito Sans', sans-serif;
   border-radius: 50%;
-  padding: 100px 65px;
+  padding: 70px 55px;
   text-align: center;
   box-shadow: 2px 4px 3px #dbdbd9;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+#current-week p {
+  font-family: 'Jost', sans-serif;
+  margin: 0;
+  font-size: 24px;
+}
+
+#current-week h2 {
+  margin: 0 0 15px 0;
+  font-size: 33px;
+  font-family: 'JOst', sans-serif;
+}
+
+#current-week #weeksToGo {
+  // margin-top: 15px;
+  font-size: 19px;
+}
+
+#finished {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: 'Jost', sans-serif;
+  margin: 0;
+}
+
+#finishedText {
+  font-size: 245px;
 }
 
 #buttons-section {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  margin: 1em;
+  margin-top: 0px;
+  margin-bottom: 25px;
 }
 
 #buttons-section button {
@@ -155,13 +197,18 @@ body {
   color: #cd7029;
 }
 
+#intentionText {
+  color: #cd7029;
+  font-size: 24px;
+}
+
 #footer {
   display: flex;
   justify-content: center;
   list-style: none;
   font-size: 1em;
   padding: 0;
-  margin-top: 35px;
+  margin-top: 5px;
 }
 
 .form {
@@ -209,6 +256,10 @@ input[type='text'] {
 }
 
 #newReminder:focus {
+  outline: none;
+}
+
+#newIntentionText:focus {
   outline: none;
 }
 

@@ -21,10 +21,30 @@ class Footer extends Component {
         </div>
 
         <div className="form">
+          <form onSubmit={this.props.handleIntentionSubmit}>
+            <p>Set Your Intention</p>
+            <label>
+              What is your 'why' for this process? <br />
+              <input
+                type="text"
+                value={this.props.intentionInput}
+                onChange={this.props.handleIntentionChanged}
+                id="newIntentionText"
+              />
+            </label>
+            <input
+              type="submit"
+              value="Set Intention"
+              id="footerButton"
+            ></input>
+          </form>
+        </div>
+
+        <div className="form">
           <form onSubmit={this.props.handleSubmit}>
             <p>Add A Reminder</p>
             <label>
-              Give yourself a good reminder. <br />
+              Give yourself some encouragement. <br />
               <input
                 type="text"
                 // value={this.props.inputText}
