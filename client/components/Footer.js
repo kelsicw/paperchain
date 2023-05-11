@@ -1,6 +1,30 @@
 import React, { Component } from 'react';
 
 class Footer extends Component {
+  // TODO: Can I set up the function that will make a fetch request for add reminder here?
+  constructor() {
+    super();
+
+    //this.addReminderToDB.bind(this);
+  }
+
+  async addReminderToDB(event, value) {
+    event.preventDefault();
+    console.log('You clicked Add Reminder!', event);
+    const input = value;
+    fetch('/api', {
+      method: 'POST',
+      body: JSON.stringify({ reminder: input }),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(
+          'Not sure what should happen now, I think create a div to display this?',
+          response
+        );
+      });
+  }
+
   render() {
     return (
       <div id="footer">
@@ -41,14 +65,19 @@ class Footer extends Component {
         </div>
 
         <div className="form">
-          <form onSubmit={this.props.handleSubmit}>
+          <form
+            onSubmit={() =>
+              this.addReminderToDB(event, this.props.reminderInput)
+            }
+          >
+            {/* Need to update the handler function for onSubmit */}
             <p>Add A Reminder</p>
             <label>
               Give yourself some encouragement. <br />
               <input
                 type="text"
-                // value={this.props.inputText}
-                // onChange={this.props.handleInputChanged}
+                value={this.props.reminderInput}
+                onChange={this.props.handleReminderChanged}
                 id="newReminder"
               />
             </label>

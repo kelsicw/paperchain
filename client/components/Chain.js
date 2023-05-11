@@ -43,7 +43,7 @@ class Chain extends Component {
       );
       currentColor++;
     }
-    console.log('chainLinks array: ', chainLinks);
+    // console.log('chainLinks array: ', chainLinks);
 
     return <div id="chain">{chainLinks}</div>;
   }

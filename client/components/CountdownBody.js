@@ -11,9 +11,10 @@ class CountdownBody extends Component {
       inputText: '',
       intentionInput: '',
       intention: '',
-      totalWeeks: 3,
-      weeksLeft: 3,
+      totalWeeks: 4,
+      weeksLeft: 4,
       currentWeek: 1,
+      reminderInput: '',
     };
 
     //don't forget to bind any functionality with this
@@ -22,6 +23,7 @@ class CountdownBody extends Component {
     this.handleLinkClick = this.handleLinkClick.bind(this);
     this.handleIntentionChanged = this.handleIntentionChanged.bind(this);
     this.handleIntentionSubmit = this.handleIntentionSubmit.bind(this);
+    this.handleReminderChanged = this.handleReminderChanged.bind(this);
   }
 
   //function to update total weeks when user submits it to create a new chain
@@ -58,6 +60,13 @@ class CountdownBody extends Component {
     });
     console.log('intentionInput: ', this.state.intentionInput);
     console.log('intention: ', this.state.intention);
+  }
+
+  handleReminderChanged(event) {
+    console.log('You updated the reminder text box!');
+    this.setState({
+      reminderInput: event.target.value,
+    });
   }
 
   handleLinkClick(event) {
@@ -97,6 +106,8 @@ class CountdownBody extends Component {
           handleSubmit={this.handleSubmit}
           handleIntentionChanged={this.handleIntentionChanged}
           handleIntentionSubmit={this.handleIntentionSubmit}
+          reminderInput={this.state.reminderInput}
+          handleReminderChanged={this.handleReminderChanged}
         />
       </div>
     );
