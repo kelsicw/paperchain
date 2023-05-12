@@ -55,7 +55,7 @@ class CountdownBody extends Component {
     event.preventDefault();
     console.log('You clicked submit for the intention!');
     this.setState({
-      intention: `Remember, your intention is to ${this.state.intentionInput}.`,
+      intention: `Remember, your intention is to ${this.state.intentionInput}`,
       intentionInput: '',
     });
     console.log('intentionInput: ', this.state.intentionInput);

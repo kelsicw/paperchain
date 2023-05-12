@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 class Footer extends Component {
-  // TODO: Can I set up the function that will make a fetch request for add reminder here?
   constructor() {
     super();
 
@@ -14,13 +13,16 @@ class Footer extends Component {
     const input = value;
     fetch('/api', {
       method: 'POST',
+      headers: {
+        'Content-Type': 'Application/JSON',
+      },
       body: JSON.stringify({ reminder: input }),
     })
       .then((response) => response.json())
-      .then((response) => {
+      .then((data) => {
         console.log(
-          'Not sure what should happen now, I think create a div to display this?',
-          response
+          'If something came back, I would display it on the page',
+          data
         );
       });
   }
