@@ -1,6 +1,5 @@
 // this brings in the models file for the access point to my database
 const db = require('./paperchainModels');
-// ** is this pg-format below because I'm using postgres? AM I USING POSTGRES? hahaha
 const format = require('pg-format');
 
 const reminderController = {};
