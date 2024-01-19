@@ -8,12 +8,13 @@ reminderController.addReminder = (req, res, next) => {
   console.log('*** Entered the addReminder controller ***');
 
   const { reminder } = req.body;
+  res.locals.addedReminder = reminder;
   console.log('reminder: ', reminder);
   const sqlString = `INSERT INTO reminders (reminder_text) VALUES ('${reminder}')`;
   db.query(sqlString)
     .then((response) => {
       console.log('REMINDER ADDED!');
-      next();
+      return next();
     })
     .catch((error) => {
       console.log(error);

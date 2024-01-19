@@ -7,7 +7,7 @@ class Footer extends Component {
     //this.addReminderToDB.bind(this);
   }
 
-  async addReminderToDB(event, value) {
+  addReminderToDB(event, value) {
     event.preventDefault();
     console.log('You clicked Add Reminder!', event);
     const input = value;
@@ -20,10 +20,7 @@ class Footer extends Component {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(
-          'If something came back, I would display it on the page',
-          data
-        );
+        console.log('Reminder added: ', data);
       });
   }
 

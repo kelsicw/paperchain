@@ -8,7 +8,7 @@ const reminderController = require('./reminderController');
 app.use(express.json());
 
 app.post('/api', reminderController.addReminder, (req, res) => {
-  return res.status(200);
+  return res.status(200).json(res.locals.addedReminder);
 });
 
 if (process.env.NODE_ENV === 'production') {
