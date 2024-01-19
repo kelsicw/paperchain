@@ -12,6 +12,16 @@ app.post('/api', reminderController.addReminder, (req, res) => {
   return res.status(200);
 });
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.resolve(__dirname, '../build')));
+
+  app.get('/', (req, res) => {
+    return res
+      .status(200)
+      .sendFile(path.resolve(__dirname, '../build/index.html'));
+  });
+}
+
 //Global error handler
 app.use((err, req, res, next) => {
   const defaultErr = {
