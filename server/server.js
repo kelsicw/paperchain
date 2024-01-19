@@ -12,12 +12,6 @@ app.post('/api', reminderController.addReminder, (req, res) => {
   return res.status(200);
 });
 
-app.use(express.static(path.resolve(__dirname, '../build')));
-
-app.get('/', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../build/index.html'));
-});
-
 //Global error handler
 app.use((err, req, res, next) => {
   const defaultErr = {

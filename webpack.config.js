@@ -8,7 +8,7 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build'),
   },
-  mode: process.env.NODE_ENV,
+  mode: 'production',
   module: {
     rules: [
       {
@@ -33,8 +33,8 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: path.resolve(__dirname, 'build'),
-      publicPath: '/',
+      directory: path.resolve(__dirname, './build'),
+      publicPath: './build',
     },
     compress: true,
     port: 8080,

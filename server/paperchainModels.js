@@ -21,3 +21,5 @@ module.exports = {
     return pool.query(text, params, callback);
   },
 };
+
+// TODO: How do I actually create what the schema should be? Like with a column for id's and a column for text?
