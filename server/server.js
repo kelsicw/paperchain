@@ -5,7 +5,6 @@ const PORT = 3001;
 
 const reminderController = require('./reminderController');
 
-// Do I need to parse JSON from incoming request?
 app.use(express.json());
 
 app.post('/api', reminderController.addReminder, (req, res) => {

@@ -1,9 +1,7 @@
-// this is straight from unit-10-databases, kind of forget what this is actually doing right now
+require('dotenv').config();
 const { Pool } = require('pg');
 
-// this is from my database on ElephantSQL!
-const PG_URI =
-  'postgres://fylhjlya:FKSV3UkqO7CzOQfnRXfESbI5uIzt2vuC@drona.db.elephantsql.com/fylhjlya';
+const PG_URI = process.env.DB_URI;
 
 // connection string connects to the database via a pool. The pool manages our connections to the database
 // this makes our database queries more performant instead of having to wait for process of establishing new connections each time we send a query
