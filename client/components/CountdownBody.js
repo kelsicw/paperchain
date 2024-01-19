@@ -28,7 +28,7 @@ class CountdownBody extends Component {
 
   //function to update total weeks when user submits it to create a new chain
   handleInputChanged(event) {
-    console.log('You updated the text in the text box!');
+    // console.log('You updated the text in the text box!');
     this.setState({
       inputText: event.target.value,
     });
@@ -36,7 +36,7 @@ class CountdownBody extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log('You clicked submit!');
+    // console.log('You clicked submit!');
     this.setState({
       totalWeeks: Number(this.state.inputText),
       weeksLeft: Number(this.state.inputText),
@@ -45,7 +45,7 @@ class CountdownBody extends Component {
   }
 
   handleIntentionChanged(event) {
-    console.log('You updated the intention text box!');
+    // console.log('You updated the intention text box!');
     this.setState({
       intentionInput: event.target.value,
     });
@@ -53,17 +53,17 @@ class CountdownBody extends Component {
 
   handleIntentionSubmit(event) {
     event.preventDefault();
-    console.log('You clicked submit for the intention!');
+    // console.log('You clicked submit for the intention!');
     this.setState({
       intention: `Remember, your intention is to ${this.state.intentionInput}`,
       intentionInput: '',
     });
-    console.log('intentionInput: ', this.state.intentionInput);
-    console.log('intention: ', this.state.intention);
+    // console.log('intentionInput: ', this.state.intentionInput);
+    // console.log('intention: ', this.state.intention);
   }
 
   handleReminderChanged(event) {
-    console.log('You updated the reminder text box!');
+    // console.log('You updated the reminder text box!');
     this.setState({
       reminderInput: event.target.value,
     });
@@ -71,7 +71,7 @@ class CountdownBody extends Component {
 
   handleLinkClick(event) {
     event.preventDefault();
-    console.log('You clicked a link!');
+    // console.log('You clicked a link!');
     this.setState({
       totalWeeks: this.state.totalWeeks,
       inputText: '',

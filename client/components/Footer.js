@@ -4,12 +4,12 @@ class Footer extends Component {
   constructor() {
     super();
 
-    //this.addReminderToDB.bind(this);
+    this.addReminderToDB = this.addReminderToDB.bind(this);
   }
 
   addReminderToDB(event, value) {
     event.preventDefault();
-    console.log('You clicked Add Reminder!', event);
+    // console.log('You clicked Add Reminder!');
     const input = value;
     fetch('/api', {
       method: 'POST',
@@ -21,6 +21,7 @@ class Footer extends Component {
       .then((response) => response.json())
       .then((data) => {
         console.log('Reminder added: ', data);
+        this.props.handleReminderChanged({ target: { value: '' } });
       });
   }
 
@@ -83,17 +84,6 @@ class Footer extends Component {
             <input type="submit" value="Add Reminder" id="footerButton"></input>
           </form>
         </div>
-
-        {/* <div className="form">
-          <form>
-            <p>Add A Reminder</p>
-            <label htmlFor="newReminder" id="footerLabel">
-              Give yourself a good reminder.
-            </label>
-            <input type="text" id="newReminder" name="newReminder"></input>
-            <input type="submit" value="Add Reminder" id="footerButton"></input>
-          </form>
-        </div> */}
 
         {/* <button>Edit My Reminders</button> */}
       </div>
