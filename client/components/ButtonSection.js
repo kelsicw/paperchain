@@ -5,7 +5,7 @@ class ButtonSection extends Component {
     return (
       <div id="buttons-section">
         <p id="intentionText">{this.props.intention}</p>
-        <button id="main-button">I need a reminder</button>
+        <button className="main-button">I need a reminder</button>
       </div>
     );
   }

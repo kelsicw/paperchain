@@ -168,7 +168,7 @@ body {
 
 #finishedText {
   font-size: 245px;
-  margin: 120px 0;
+  margin: 140px 0;
 }
 
 #buttons-section {
@@ -180,12 +180,13 @@ body {
   margin-bottom: 25px;
 }
 
-#main-button {
+.main-button {
   background-color: #cd7029;
   border: 2px solid #cd7029;
-  border-radius: 5px;
+  border-radius: 25px;
+  // border-radius: 5px;
   color: white;
-  padding: 10px 15px;
+  padding: 12px 22px;
   margin: 5px;
   box-shadow: 2px 4px 3px #dbdbd9;
   font-size: 1.2em;
@@ -194,7 +195,7 @@ body {
   cursor: pointer;
 }
 
-#main-button:hover {
+.main-button:hover {
   border: 2px solid #cd7029;
   background-color: white;
   color: #cd7029;
@@ -270,8 +271,8 @@ input[type='text'] {
   background: #db9828;
   color: white;
   border: 2px solid #db9828;
-  border-radius: 5px;
-  padding: 6px;
+  border-radius: 25px;
+  padding: 8px 12px;
   box-shadow: 1px 3px 2px #dbdbd9;
   font-size: 16px;
   margin-top: 10px;
@@ -290,4 +291,11 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#restart-button {
+  padding: 12px 22px;
+  margin: 5px;
+  box-shadow: 2px 4px 3px #dbdbd9;
+  font-size: 1.1em;
 }

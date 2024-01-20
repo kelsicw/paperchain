@@ -27,7 +27,11 @@ export const CompletedChain = (props) => {
   return (
     <div id="finished">
       <h2 id="finishedText">YOU MADE IT!</h2>
-      <button className="footerButton" onClick={props.onRestart}>
+      <button
+        className="main-button"
+        id="restart-button"
+        onClick={props.onRestart}
+      >
         Start A New Chain
       </button>
     </div>
