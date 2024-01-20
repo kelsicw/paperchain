@@ -13,13 +13,6 @@ export const CompletedChain = (props) => {
       '#c9e3e3',
       '#8f9261',
       '#db9828',
-      '#cd7029',
-      '#c77874',
-      '#45a6ab',
-      '#8cc7d0',
-      '#c9e3e3',
-      '#8f9261',
-      '#db9828',
     ],
     confettiNumber: 400,
   });

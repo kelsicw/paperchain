@@ -13,24 +13,18 @@ class Chain extends Component {
       '#c9e3e3',
       '#8f9261',
       '#db9828',
-      '#cd7029',
-      '#c77874',
-      '#45a6ab',
-      '#8cc7d0',
-      '#c9e3e3',
-      '#8f9261',
-      '#db9828',
     ];
 
     const chainLinks = [];
     let currentColor = 0;
 
     for (let i = 0; i < this.props.weeksLeft; i++) {
-      if (i > chainLinkColors.length - 1) currentColor = 0;
       const style = {
         border: `10px solid ${chainLinkColors[currentColor]}`,
         borderWidth: '22px 2px',
       };
+
+      if (i % 6 === 0) currentColor = 0;
 
       chainLinks.push(
         <ChainLink
@@ -41,6 +35,7 @@ class Chain extends Component {
           // className="chainLink"
         />
       );
+      console.log('currentColor: ', currentColor);
       currentColor++;
     }
     // console.log('chainLinks array: ', chainLinks);
