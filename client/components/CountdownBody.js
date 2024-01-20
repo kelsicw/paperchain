@@ -3,6 +3,7 @@ import Chain from './Chain';
 import CurrentWeek from './CurrentWeek';
 import ButtonSection from './ButtonSection';
 import Footer from './Footer';
+import { CompletedChain } from './CompletedChain';
 
 class CountdownBody extends Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class CountdownBody extends Component {
       weeksLeft: 4,
       currentWeek: 1,
       reminderInput: '',
+      countdownEnded: false,
     };
 
     //don't forget to bind any functionality with this
@@ -24,6 +26,18 @@ class CountdownBody extends Component {
     this.handleIntentionChanged = this.handleIntentionChanged.bind(this);
     this.handleIntentionSubmit = this.handleIntentionSubmit.bind(this);
     this.handleReminderChanged = this.handleReminderChanged.bind(this);
+    this.handleRestart = this.handleRestart.bind(this);
+  }
+
+  componentDidUpdate() {
+    this.checkCountdownEnded();
+  }
+
+  checkCountdownEnded() {
+    const { currentWeek, totalWeeks, countdownEnded } = this.state;
+    if (currentWeek > totalWeeks && !countdownEnded) {
+      this.setState({ countdownEnded: true });
+    }
   }
 
   //function to update total weeks when user submits it to create a new chain
@@ -80,37 +94,56 @@ class CountdownBody extends Component {
     });
   }
 
+  handleRestart() {
+    this.setState({
+      totalWeeks: 4,
+      weeksLeft: 4,
+      currentWeek: 1,
+      countdownEnded: false,
+    });
+  }
+
   render() {
-    return (
-      <div id="countdownBody">
-        <Chain
-          totalWeeks={this.state.totalWeeks}
-          handleLinkClick={this.handleLinkClick}
-          weeksLeft={this.state.weeksLeft}
-        />
-        <CurrentWeek
-          totalWeeks={this.state.totalWeeks}
-          currentWeek={this.state.currentWeek}
-          weeksLeft={this.state.weeksLeft}
-        />
-        <ButtonSection
-          totalWeeks={this.state.totalWeeks}
-          intention={this.state.intention}
-        />
-        <Footer
-          totalWeeks={this.state.totalWeeks}
-          inputText={this.state.inputText}
-          intentionInput={this.state.intentionInput}
-          intention={this.state.intention}
-          handleInputChanged={this.handleInputChanged}
-          handleSubmit={this.handleSubmit}
-          handleIntentionChanged={this.handleIntentionChanged}
-          handleIntentionSubmit={this.handleIntentionSubmit}
-          reminderInput={this.state.reminderInput}
-          handleReminderChanged={this.handleReminderChanged}
-        />
-      </div>
-    );
+    const { countdownEnded } = this.state;
+
+    if (countdownEnded) {
+      return (
+        <>
+          <CompletedChain onRestart={this.handleRestart} />
+        </>
+      );
+    } else {
+      return (
+        <div id="countdownBody">
+          <Chain
+            totalWeeks={this.state.totalWeeks}
+            handleLinkClick={this.handleLinkClick}
+            weeksLeft={this.state.weeksLeft}
+          />
+          <CurrentWeek
+            totalWeeks={this.state.totalWeeks}
+            currentWeek={this.state.currentWeek}
+            weeksLeft={this.state.weeksLeft}
+          />
+          <ButtonSection
+            totalWeeks={this.state.totalWeeks}
+            intention={this.state.intention}
+          />
+          <Footer
+            totalWeeks={this.state.totalWeeks}
+            inputText={this.state.inputText}
+            intentionInput={this.state.intentionInput}
+            intention={this.state.intention}
+            handleInputChanged={this.handleInputChanged}
+            handleSubmit={this.handleSubmit}
+            handleIntentionChanged={this.handleIntentionChanged}
+            handleIntentionSubmit={this.handleIntentionSubmit}
+            reminderInput={this.state.reminderInput}
+            handleReminderChanged={this.handleReminderChanged}
+          />
+        </div>
+      );
+    }
   }
 }
 

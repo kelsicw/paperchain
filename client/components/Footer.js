@@ -40,7 +40,11 @@ class Footer extends Component {
                 id="newChainText"
               />
             </label>
-            <input type="submit" value="Create Chain" id="footerButton"></input>
+            <input
+              type="submit"
+              value="Create Chain"
+              className="footerButton"
+            ></input>
           </form>
         </div>
 
@@ -59,7 +63,7 @@ class Footer extends Component {
             <input
               type="submit"
               value="Set Intention"
-              id="footerButton"
+              className="footerButton"
             ></input>
           </form>
         </div>
@@ -81,7 +85,11 @@ class Footer extends Component {
                 id="newReminder"
               />
             </label>
-            <input type="submit" value="Add Reminder" id="footerButton"></input>
+            <input
+              type="submit"
+              value="Add Reminder"
+              className="footerButton"
+            ></input>
           </form>
         </div>
 
