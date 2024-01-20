@@ -26,12 +26,12 @@ class Chain extends Component {
     let currentColor = 0;
 
     for (let i = 0; i < this.props.weeksLeft; i++) {
+      if (i > chainLinkColors.length - 1) currentColor = 0;
       const style = {
         border: `10px solid ${chainLinkColors[currentColor]}`,
         borderWidth: '22px 2px',
       };
 
-      if (i > chainLinkColors.length - 1) currentColor = 0;
       chainLinks.push(
         <ChainLink
           key={i}
