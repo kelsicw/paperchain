@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 
 class ButtonSection extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.getReminder = this.getReminder.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
-  getReminder(event) {
-    event.preventDefault();
+  getReminder() {
     console.log('You clicked Need A Reminder!');
     fetch('/api')
       .then((response) => response.json())
@@ -18,13 +19,40 @@ class ButtonSection extends Component {
       });
   }
 
+  openModal(event) {
+    event.preventDefault();
+    const modal = document.querySelector('#modal');
+
+    this.getReminder();
+
+    modal.showModal();
+  }
+
+  closeModal(event) {
+    event.preventDefault();
+    const modal = document.querySelector('#modal');
+    modal.close();
+  }
+
   render() {
+    let retrievedReminder = '';
+
     return (
       <div id="buttons-section">
         <p id="intentionText">{this.props.intention}</p>
-        <button className="main-button" onClick={this.getReminder}>
+        <button className="main-button open-button" onClick={this.openModal}>
           Need a reminder?
         </button>
+        <dialog className="modal" id="modal">
+          <button
+            className="secondary-button close-button"
+            onClick={this.closeModal}
+          >
+            X
+          </button>
+          <h2>Remember: {retrievedReminder}</h2>
+          <p>Here is your reminder</p>
+        </dialog>
       </div>
     );
   }

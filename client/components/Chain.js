@@ -35,7 +35,6 @@ class Chain extends Component {
           // className="chainLink"
         />
       );
-      console.log('currentColor: ', currentColor);
       currentColor++;
     }
     // console.log('chainLinks array: ', chainLinks);

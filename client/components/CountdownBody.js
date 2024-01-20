@@ -104,6 +104,7 @@ class CountdownBody extends Component {
       currentWeek: 1,
       reminderInput: '',
       countdownEnded: false,
+      retrievedReminder: '',
     });
   }
 
@@ -132,6 +133,7 @@ class CountdownBody extends Component {
           <ButtonSection
             totalWeeks={this.state.totalWeeks}
             intention={this.state.intention}
+            retrievedReminder={this.state.retrievedReminder}
           />
           <Footer
             totalWeeks={this.state.totalWeeks}

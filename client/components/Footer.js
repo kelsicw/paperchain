@@ -43,7 +43,7 @@ class Footer extends Component {
             <input
               type="submit"
               value="Create Chain"
-              className="footerButton"
+              className="secondary-button"
             ></input>
           </form>
         </div>
@@ -63,7 +63,7 @@ class Footer extends Component {
             <input
               type="submit"
               value="Set Intention"
-              className="footerButton"
+              className="secondary-button"
             ></input>
           </form>
         </div>
@@ -88,7 +88,7 @@ class Footer extends Component {
             <input
               type="submit"
               value="Add Reminder"
-              className="footerButton"
+              className="secondary-button"
             ></input>
           </form>
         </div>

@@ -195,6 +195,19 @@ body {
   cursor: pointer;
 }
 
+.modal {
+  padding: 5em 10em;
+  max-width: 50%;
+  border-radius: 10px;
+  border: none;
+  backdrop-filter: blur(4px);
+}
+
+.modal::backdrop {
+  background: linear-gradient(180deg, #db9828, #ffff);
+  opacity: 0.2;
+}
+
 .main-button:hover {
   border: 2px solid #cd7029;
   background-color: white;
@@ -267,7 +280,7 @@ input[type='text'] {
   outline: none;
 }
 
-.footerButton {
+.secondary-button {
   background: #db9828;
   color: white;
   border: 2px solid #db9828;
@@ -280,7 +293,7 @@ input[type='text'] {
   transition: 0.3s;
 }
 
-.footerButton:hover {
+.secondary-button:hover {
   background: white;
   color: #db9828;
   border: 2px solid #db9828;
