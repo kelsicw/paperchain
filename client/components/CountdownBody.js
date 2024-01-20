@@ -69,7 +69,7 @@ class CountdownBody extends Component {
     event.preventDefault();
     // console.log('You clicked submit for the intention!');
     this.setState({
-      intention: `Remember, your intention is to ${this.state.intentionInput}`,
+      intention: `Remember your intention: ${this.state.intentionInput}`,
       intentionInput: '',
     });
     // console.log('intentionInput: ', this.state.intentionInput);
@@ -96,9 +96,13 @@ class CountdownBody extends Component {
 
   handleRestart() {
     this.setState({
+      inputText: '',
+      intentionInput: '',
+      intention: '',
       totalWeeks: 4,
       weeksLeft: 4,
       currentWeek: 1,
+      reminderInput: '',
       countdownEnded: false,
     });
   }

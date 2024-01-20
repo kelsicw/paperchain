@@ -11,6 +11,10 @@ app.post('/api', reminderController.addReminder, (req, res) => {
   return res.status(200).json(res.locals.addedReminder);
 });
 
+app.get('/api', reminderController.getReminder, (req, res) => {
+  return res.status(200).json(res.locals.retrievedReminder);
+});
+
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.resolve(__dirname, '../build')));
 
