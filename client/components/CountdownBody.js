@@ -17,6 +17,7 @@ class CountdownBody extends Component {
       currentWeek: 1,
       reminderInput: '',
       countdownEnded: false,
+      retrievedReminder: '',
     };
 
     //don't forget to bind any functionality with this
@@ -27,6 +28,9 @@ class CountdownBody extends Component {
     this.handleIntentionSubmit = this.handleIntentionSubmit.bind(this);
     this.handleReminderChanged = this.handleReminderChanged.bind(this);
     this.handleRestart = this.handleRestart.bind(this);
+    this.getReminder = this.getReminder.bind(this);
+    this.handleResetRetrievedReminder =
+      this.handleResetRetrievedReminder.bind(this);
   }
 
   componentDidUpdate() {
@@ -108,6 +112,25 @@ class CountdownBody extends Component {
     });
   }
 
+  getReminder() {
+    console.log('You clicked Need A Reminder!');
+    fetch('/api')
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Reminder retrieved: ', data);
+
+        this.setState({
+          retrievedReminder: data,
+        });
+      });
+  }
+
+  handleResetRetrievedReminder() {
+    this.setState({
+      retrievedReminder: '',
+    });
+  }
+
   render() {
     const { countdownEnded } = this.state;
 
@@ -134,6 +157,8 @@ class CountdownBody extends Component {
             totalWeeks={this.state.totalWeeks}
             intention={this.state.intention}
             retrievedReminder={this.state.retrievedReminder}
+            getReminder={this.getReminder}
+            handleResetRetrievedReminder={this.handleResetRetrievedReminder}
           />
           <Footer
             totalWeeks={this.state.totalWeeks}
