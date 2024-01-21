@@ -196,13 +196,13 @@ body {
 }
 
 .modal {
-  // transition: opacity 0.5s var(--ease-3);
+  transition: opacity 0.5s var(--ease-3);
   padding: 0.5em;
   max-width: 50%;
   border-radius: 20px;
   border: none;
   backdrop-filter: blur(4px);
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: #cd7029;
   background: rgb(255, 255, 255, 0.65);
   box-shadow: 25px 25px 75px #b2b8b8;
@@ -224,10 +224,15 @@ body {
 }
 
 .modal::backdrop {
-  background-color: #dbdbd9;
+  background-color: #c7c7c7;
   // background: linear-gradient(180deg, #45a6ab, #2f6e71);
-  opacity: 0.55;
+  opacity: 0.65;
 }
+
+// dialog {
+//   // transform: translateY(-100vh) scale(0, 0);
+//   transition: transform 500ms ease;
+// }
 
 #close-button {
   background-color: #d2e8e8;
@@ -235,15 +240,16 @@ body {
   border: none;
   border-radius: 20px;
   color: #45a6ab;
-  font-size: 2rem;
+  font-size: 0.9rem;
   margin: 0;
-  padding: 0.1em 0.55em;
+  padding: 0.3em 0.55em;
   text-shadow: 0.5px 0.5px 0.5px #2f6e71;
-  position: absolute;
+  position: fixed;
 }
 
 #close-button:hover {
   background-color: #c9e3e3;
+  border: none;
   // border: 1px solid #45a6ab;
   transition: 150ms;
 }

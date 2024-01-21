@@ -44,7 +44,7 @@ class ButtonSection extends Component {
         </button>
         <dialog className="modal" id="modal">
           <button id="close-button" onClick={this.closeModal}>
-            &#8249;
+            {/* &#8249; */}X
           </button>
           {/* <img src={paperchainLink} /> */}
           <h2>{this.props.retrievedReminder}</h2>
