@@ -1,29 +1,20 @@
 import React, { Component } from 'react';
+// import paperchainLink from '../../public/paperchainLink.png';
 
 class ButtonSection extends Component {
   constructor(props) {
     super(props);
 
-    this.getReminder = this.getReminder.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.handleGetReminder = this.handleGetReminder.bind(this);
   }
 
-  getReminder() {
-    console.log('You clicked Need A Reminder!');
-    fetch('/api')
-      .then((response) => response.json())
-      .then((data) => {
-        console.log('Reminder retrieved: ', data);
-        // this.props.handleReminderChanged({ target: { value: '' } });
-      });
-  }
-
-  openModal(event) {
-    event.preventDefault();
+  openModal() {
+    // event.preventDefault();
     const modal = document.querySelector('#modal');
 
-    this.getReminder();
+    // this.props.getReminder();
 
     modal.showModal();
   }
@@ -34,24 +25,29 @@ class ButtonSection extends Component {
     modal.close();
   }
 
-  render() {
-    let retrievedReminder = '';
+  handleGetReminder(event) {
+    event.preventDefault();
+    this.props.getReminder();
+    this.openModal();
+    this.props.handleResetRetrievedReminder();
+  }
 
+  render() {
     return (
       <div id="buttons-section">
         <p id="intentionText">{this.props.intention}</p>
-        <button className="main-button open-button" onClick={this.openModal}>
+        <button
+          className="main-button open-button"
+          onClick={this.handleGetReminder}
+        >
           Need a reminder?
         </button>
         <dialog className="modal" id="modal">
-          <button
-            className="secondary-button close-button"
-            onClick={this.closeModal}
-          >
-            X
+          <button id="close-button" onClick={this.closeModal}>
+            &#8249;
           </button>
-          <h2>Remember: {retrievedReminder}</h2>
-          <p>Here is your reminder</p>
+          {/* <img src={paperchainLink} /> */}
+          <h2>{this.props.retrievedReminder}</h2>
         </dialog>
       </div>
     );

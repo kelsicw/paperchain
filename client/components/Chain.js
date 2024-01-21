@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import ChainLink from './ChainLink.js';
 
 class Chain extends Component {
-  // TODO: put render logic for creating the correct number of chain links here
-
   render() {
     const chainLinkColors = [
       '#cd7029',
@@ -24,7 +22,7 @@ class Chain extends Component {
         borderWidth: '22px 2px',
       };
 
-      if (i % 6 === 0) currentColor = 0;
+      if (currentColor === 6) currentColor = -1;
 
       chainLinks.push(
         <ChainLink
@@ -32,12 +30,10 @@ class Chain extends Component {
           id={`chainLink${i + 1}`}
           style={style}
           handleLinkClick={this.props.handleLinkClick}
-          // className="chainLink"
         />
       );
       currentColor++;
     }
-    // console.log('chainLinks array: ', chainLinks);
 
     return <div id="chain">{chainLinks}</div>;
   }

@@ -196,16 +196,56 @@ body {
 }
 
 .modal {
-  padding: 5em 10em;
+  // transition: opacity 0.5s var(--ease-3);
+  padding: 0.5em;
   max-width: 50%;
-  border-radius: 10px;
+  border-radius: 20px;
   border: none;
   backdrop-filter: blur(4px);
+  font-size: 2.5rem;
+  color: #cd7029;
+  background: rgb(255, 255, 255, 0.65);
+  box-shadow: 25px 25px 75px #b2b8b8;
+
+  h2 {
+    font-style: italic;
+    margin: 2em;
+    padding: 1em 1em;
+    text-align: center;
+    background: #45a6ab;
+    // background: linear-gradient(0deg, #db9828, #cd7029);
+    border-radius: 20px;
+    font-family: 'Jost', sans-serif;
+    color: white;
+    text-shadow: 1px 1px 1px #97adaf;
+    box-shadow: 1px 3px 20px #c9e3e3;
+    opacity: 1;
+  }
 }
 
 .modal::backdrop {
-  background: linear-gradient(180deg, #db9828, #ffff);
-  opacity: 0.2;
+  background-color: #dbdbd9;
+  // background: linear-gradient(180deg, #45a6ab, #2f6e71);
+  opacity: 0.55;
+}
+
+#close-button {
+  background-color: #d2e8e8;
+  // border: 1px solid #8cc7d0;
+  border: none;
+  border-radius: 20px;
+  color: #45a6ab;
+  font-size: 2rem;
+  margin: 0;
+  padding: 0.1em 0.55em;
+  text-shadow: 0.5px 0.5px 0.5px #2f6e71;
+  position: absolute;
+}
+
+#close-button:hover {
+  background-color: #c9e3e3;
+  // border: 1px solid #45a6ab;
+  transition: 150ms;
 }
 
 .main-button:hover {
