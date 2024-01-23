@@ -11,11 +11,7 @@ class ButtonSection extends Component {
   }
 
   openModal() {
-    // event.preventDefault();
     const modal = document.querySelector('#modal');
-
-    // this.props.getReminder();
-
     modal.showModal();
   }
 
@@ -27,9 +23,9 @@ class ButtonSection extends Component {
 
   handleGetReminder(event) {
     event.preventDefault();
-    this.props.getReminder();
-    this.openModal();
-    this.props.handleResetRetrievedReminder();
+    this.props.getReminder(() => {
+      this.openModal();
+    });
   }
 
   render() {
