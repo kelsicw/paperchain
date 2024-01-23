@@ -12,7 +12,6 @@ reminderController.addReminder = (req, res, next) => {
       return next();
     })
     .catch((error) => {
-      console.log(error);
       return next({ error });
     });
 };
@@ -29,7 +28,6 @@ reminderController.getReminder = (req, res, next) => {
       return next();
     })
     .catch((error) => {
-      console.log(error);
       return next({ error });
     });
 };

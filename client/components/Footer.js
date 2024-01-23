@@ -9,7 +9,6 @@ class Footer extends Component {
 
   addReminderToDB(event, value) {
     event.preventDefault();
-    // console.log('You clicked Add Reminder!');
     const input = value;
     fetch('/api', {
       method: 'POST',
@@ -20,7 +19,6 @@ class Footer extends Component {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log('Reminder added: ', data);
         this.props.handleReminderChanged({ target: { value: '' } });
       });
   }

@@ -16,9 +16,7 @@ class CurrentWeek extends Component {
     } else {
       paragraph = <SingleWeekLeft weeksLeft={this.props.weeksLeft} />;
     }
-    // console.log('currentWeek: ', this.props.currentWeek);
-    // console.log('totalWeeks: ', this.props.totalWeeks);
-    // console.log('weeksLeft: ', this.props.weeksLeft);
+
     return (
       <div id="current-week">
         <p>You're in</p>
