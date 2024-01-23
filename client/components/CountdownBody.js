@@ -18,9 +18,9 @@ class CountdownBody extends Component {
       reminderInput: '',
       countdownEnded: false,
       retrievedReminder: '',
+      needReminderClicked: false,
     };
 
-    //don't forget to bind any functionality with this
     this.handleInputChanged = this.handleInputChanged.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleLinkClick = this.handleLinkClick.bind(this);
@@ -29,8 +29,6 @@ class CountdownBody extends Component {
     this.handleReminderChanged = this.handleReminderChanged.bind(this);
     this.handleRestart = this.handleRestart.bind(this);
     this.getReminder = this.getReminder.bind(this);
-    this.handleResetRetrievedReminder =
-      this.handleResetRetrievedReminder.bind(this);
   }
 
   componentDidUpdate() {
@@ -109,26 +107,28 @@ class CountdownBody extends Component {
       reminderInput: '',
       countdownEnded: false,
       retrievedReminder: '',
+      needReminderClicked: false,
     });
   }
 
-  getReminder() {
+  getReminder(callback) {
     console.log('You clicked Need A Reminder!');
     fetch('/api')
       .then((response) => response.json())
       .then((data) => {
         console.log('Reminder retrieved: ', data);
 
-        this.setState({
-          retrievedReminder: data,
-        });
+        this.setState(
+          {
+            retrievedReminder: data,
+          },
+          () => {
+            if (callback) {
+              callback();
+            }
+          }
+        );
       });
-  }
-
-  handleResetRetrievedReminder() {
-    this.setState({
-      retrievedReminder: '',
-    });
   }
 
   render() {
@@ -158,7 +158,7 @@ class CountdownBody extends Component {
             intention={this.state.intention}
             retrievedReminder={this.state.retrievedReminder}
             getReminder={this.getReminder}
-            handleResetRetrievedReminder={this.handleResetRetrievedReminder}
+            needReminderClicked={this.state.needReminderClicked}
           />
           <Footer
             totalWeeks={this.state.totalWeeks}
