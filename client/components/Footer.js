@@ -32,7 +32,9 @@ class Footer extends Component {
             <label>
               How many weeks until your event? <br />
               <input
-                type="text"
+                type="number"
+                max="100"
+                min="1"
                 value={this.props.inputText}
                 onChange={this.props.handleInputChanged}
                 id="newChainText"

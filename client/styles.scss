@@ -316,6 +316,19 @@ input[type='text'] {
   border-radius: 10px;
   // background-color: #fcfcf7;
   box-shadow: inset 1px 1px 1px #e9e1d4;
+  width: 70%;
+}
+
+input[type='number'] {
+  margin: 8px;
+  padding: 6px;
+  font-size: 15px;
+  color: #db9828;
+  font-family: 'Nunito Sans', sans-serif;
+  border: 1px solid #db9828;
+  border-radius: 10px;
+  box-shadow: inset 1px 1px 1px #e9e1d4;
+  width: 70%;
 }
 
 #newChainText:focus {
