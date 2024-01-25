@@ -38,6 +38,7 @@ class Footer extends Component {
                 value={this.props.inputText}
                 onChange={this.props.handleInputChanged}
                 id="newChainText"
+                required
               />
             </label>
             <input
@@ -58,6 +59,7 @@ class Footer extends Component {
                 value={this.props.intentionInput}
                 onChange={this.props.handleIntentionChanged}
                 id="newIntentionText"
+                required
               />
             </label>
             <input
@@ -83,6 +85,7 @@ class Footer extends Component {
                 value={this.props.reminderInput}
                 onChange={this.props.handleReminderChanged}
                 id="newReminder"
+                required
               />
             </label>
             <input
