@@ -44,13 +44,9 @@ class CountdownBody extends Component {
 
   //function to update total weeks when user submits it to create a new chain
   handleInputChanged(event) {
-    if (event.target.value !== '') {
-      this.setState({
-        inputText: event.target.value,
-      });
-    } else {
-      alert('Please enter a number between 1 and 100!');
-    }
+    this.setState({
+      inputText: event.target.value,
+    });
   }
 
   handleSubmit(event) {

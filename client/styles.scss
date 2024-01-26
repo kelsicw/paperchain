@@ -95,30 +95,31 @@ body {
 
 #chain {
   display: flex;
-  justify-content: center;
+  justify-content: end;
   color: white;
   margin-top: 10px;
+  max-width: 90%;
 }
 
 .chain-link {
   margin: 15px -10px;
   background-color: transparent;
   box-shadow: inset 0px 4px 3px #dbdbd9, 0px 4px 3px #dbdbd9;
-  padding: 12px 38px;
+  padding: 11px 37px;
   border-radius: 100px;
-  transition: 0.275s;
   color: white;
   cursor: pointer;
   border: 10px solid #db9828;
   border-width: 22px 2px;
+  font-size: 1.2rem;
 }
 
 .chain-link:hover {
   border-color: #8f9261;
   color: #8f9261;
   font-size: 1.2rem;
-  border-width: 22px 2px;
-  padding: 3px 34px;
+  font-family: 'Nunito Sans', sans-serif;
+  padding: 10px 37px;
 }
 
 #current-week {
@@ -146,9 +147,9 @@ body {
 }
 
 #current-week h2 {
-  margin: 0 0 15px 0;
+  margin: 0 0 8px 0;
   font-size: 33px;
-  font-family: 'JOst', sans-serif;
+  font-family: 'Jost', sans-serif;
 }
 
 #current-week #weeksToGo {
