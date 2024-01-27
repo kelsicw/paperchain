@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Chain from './Chain';
 import CurrentWeek from './CurrentWeek';
 import ButtonSection from './ButtonSection';
-import Footer from './Footer';
+import NewChainMenu from './NewChainMenu';
 import { CompletedChain } from './CompletedChain';
 
 class CountdownBody extends Component {
@@ -149,7 +149,7 @@ class CountdownBody extends Component {
             getReminder={this.getReminder}
             needReminderClicked={this.state.needReminderClicked}
           />
-          <Footer
+          <NewChainMenu
             totalWeeks={this.state.totalWeeks}
             inputText={this.state.inputText}
             intentionInput={this.state.intentionInput}
