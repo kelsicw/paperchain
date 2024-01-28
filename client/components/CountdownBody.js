@@ -54,6 +54,7 @@ class CountdownBody extends Component {
     this.setState({
       totalWeeks: Number(this.state.inputText),
       weeksLeft: Number(this.state.inputText),
+      currentWeek: 1,
       inputText: '',
     });
   }

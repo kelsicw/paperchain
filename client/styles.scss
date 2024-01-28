@@ -119,6 +119,7 @@ body {
   flex-direction: column;
   justify-items: center;
   height: 100%;
+  align-items: center;
 }
 
 #current-week {
@@ -233,6 +234,7 @@ body {
   padding: 0.3em 0.55em;
   text-shadow: 0.5px 0.5px 0.5px #2f6e71;
   position: fixed;
+  background-color: white;
 }
 
 #close-button:hover {
