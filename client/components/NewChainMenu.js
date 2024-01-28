@@ -26,16 +26,16 @@ class NewChainMenu extends Component {
   render() {
     return (
       <div id="new-chain-menu">
-        <label className="menu-button-wrapper" htmlFor="">
-          <input type="checkbox" className="menu-button" />
+        <label className="menu-button-wrapper">
+          <input type="checkbox" id="menu-button" />
           <div className="icon-wrapper">
             <label className="add-item">
               <input className="add-item-input" type="checkbox" />
               <span className="add-symbol">+</span>
             </label>
           </div>
-          <div className="item-list">
-            <div className="form">
+          <div id="item-list">
+            <div className="form" id="create-new-chain-form">
               <form onSubmit={this.props.handleSubmit}>
                 <p>Create A New Chain</p>
                 <label className="custom-label">
@@ -58,7 +58,7 @@ class NewChainMenu extends Component {
               </form>
             </div>
 
-            <div className="form">
+            <div className="form" id="set-intention-form">
               <form onSubmit={this.props.handleIntentionSubmit}>
                 <p>Set Your Intention</p>
                 <label className="custom-label">
@@ -79,7 +79,7 @@ class NewChainMenu extends Component {
               </form>
             </div>
 
-            <div className="form">
+            <div className="form" id="add-reminder-form">
               <form
                 onSubmit={() =>
                   this.addReminderToDB(event, this.props.reminderInput)
