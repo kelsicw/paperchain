@@ -120,6 +120,7 @@ body {
   justify-items: center;
   height: 100%;
   align-items: center;
+  justify-content: space-around;
 }
 
 #current-week {
@@ -175,7 +176,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 0px;
+  margin-top: 10px;
   margin-bottom: 25px;
 }
 
@@ -458,4 +459,25 @@ input[type='number'] {
   margin: 2px;
   box-shadow: 2px 4px 3px #dbdbd9;
   font-size: 1.1em;
+}
+
+@media screen and (max-width: 745px) {
+  #main-title {
+    font-size: 5vw;
+    color: #db9828;
+  }
+
+  .logo,
+  .chain-icon {
+    font-size: 2.5rem;
+    margin: -6.5px;
+  }
+
+  .modal {
+    font-size: 0.8em;
+  }
+
+  #close-button {
+    font-size: 0.8rem;
+  }
 }
