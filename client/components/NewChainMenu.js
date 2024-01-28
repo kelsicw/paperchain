@@ -26,15 +26,15 @@ class NewChainMenu extends Component {
   render() {
     return (
       <div id="new-chain-menu">
-        <label class="menu-button-wrapper" for="">
-          <input type="checkbox" class="menu-button" />
-          <div class="icon-wrapper">
-            <label class="add-item">
-              <input class="add-item-input" type="checkbox" />
-              <span class="add-symbol">+</span>
+        <label className="menu-button-wrapper" htmlFor="">
+          <input type="checkbox" className="menu-button" />
+          <div className="icon-wrapper">
+            <label className="add-item">
+              <input className="add-item-input" type="checkbox" />
+              <span className="add-symbol">+</span>
             </label>
           </div>
-          <div class="item-list">
+          <div className="item-list">
             <div className="form">
               <form onSubmit={this.props.handleSubmit}>
                 <p>Create A New Chain</p>
