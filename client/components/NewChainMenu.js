@@ -29,18 +29,16 @@ class NewChainMenu extends Component {
         <label class="menu-button-wrapper" for="">
           <input type="checkbox" class="menu-button" />
           <div class="icon-wrapper">
-            <label class="hamburger">
-              <input class="hamburger-input" type="checkbox" />
-              <span class="hamburger-line first"></span>
-              <span class="hamburger-line second"></span>
-              <span class="hamburger-line third"></span>
+            <label class="add-item">
+              <input class="add-item-input" type="checkbox" />
+              <span class="add-symbol">+</span>
             </label>
           </div>
           <div class="item-list">
             <div className="form">
               <form onSubmit={this.props.handleSubmit}>
                 <p>Create A New Chain</p>
-                <label>
+                <label className="custom-label">
                   How many weeks until your event? <br />
                   <input
                     type="number"
@@ -63,7 +61,7 @@ class NewChainMenu extends Component {
             <div className="form">
               <form onSubmit={this.props.handleIntentionSubmit}>
                 <p>Set Your Intention</p>
-                <label>
+                <label className="custom-label">
                   What is your 'why' for this process? <br />
                   <input
                     type="text"
@@ -88,7 +86,7 @@ class NewChainMenu extends Component {
                 }
               >
                 <p>Add A Reminder</p>
-                <label>
+                <label className="custom-label">
                   Give yourself some encouragement. <br />
                   <input
                     type="text"
