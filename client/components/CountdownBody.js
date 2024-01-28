@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Chain from './Chain';
 import CurrentWeek from './CurrentWeek';
 import ButtonSection from './ButtonSection';
-import Footer from './Footer';
+import NewChainMenu from './NewChainMenu';
 import { CompletedChain } from './CompletedChain';
 
 class CountdownBody extends Component {
@@ -137,30 +137,32 @@ class CountdownBody extends Component {
             handleLinkClick={this.handleLinkClick}
             weeksLeft={this.state.weeksLeft}
           />
-          <CurrentWeek
-            totalWeeks={this.state.totalWeeks}
-            currentWeek={this.state.currentWeek}
-            weeksLeft={this.state.weeksLeft}
-          />
-          <ButtonSection
-            totalWeeks={this.state.totalWeeks}
-            intention={this.state.intention}
-            retrievedReminder={this.state.retrievedReminder}
-            getReminder={this.getReminder}
-            needReminderClicked={this.state.needReminderClicked}
-          />
-          <Footer
-            totalWeeks={this.state.totalWeeks}
-            inputText={this.state.inputText}
-            intentionInput={this.state.intentionInput}
-            intention={this.state.intention}
-            handleInputChanged={this.handleInputChanged}
-            handleSubmit={this.handleSubmit}
-            handleIntentionChanged={this.handleIntentionChanged}
-            handleIntentionSubmit={this.handleIntentionSubmit}
-            reminderInput={this.state.reminderInput}
-            handleReminderChanged={this.handleReminderChanged}
-          />
+          <div id="main-countdown">
+            <NewChainMenu
+              totalWeeks={this.state.totalWeeks}
+              inputText={this.state.inputText}
+              intentionInput={this.state.intentionInput}
+              intention={this.state.intention}
+              handleInputChanged={this.handleInputChanged}
+              handleSubmit={this.handleSubmit}
+              handleIntentionChanged={this.handleIntentionChanged}
+              handleIntentionSubmit={this.handleIntentionSubmit}
+              reminderInput={this.state.reminderInput}
+              handleReminderChanged={this.handleReminderChanged}
+            />
+            <CurrentWeek
+              totalWeeks={this.state.totalWeeks}
+              currentWeek={this.state.currentWeek}
+              weeksLeft={this.state.weeksLeft}
+            />
+            <ButtonSection
+              totalWeeks={this.state.totalWeeks}
+              intention={this.state.intention}
+              retrievedReminder={this.state.retrievedReminder}
+              getReminder={this.getReminder}
+              needReminderClicked={this.state.needReminderClicked}
+            />
+          </div>
         </div>
       );
     }
