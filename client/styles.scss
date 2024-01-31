@@ -140,6 +140,7 @@ body {
   color: white;
   background-color: #db9828;
   font-family: 'Nunito Sans', sans-serif;
+  font-weight: 300;
   border-radius: 50%;
   padding: 70px 55px;
   text-align: center;
@@ -154,12 +155,14 @@ body {
   font-family: 'Jost', sans-serif;
   margin: 0;
   font-size: 24px;
+  font-weight: 300;
 }
 
 #current-week h2 {
   margin: 0 0 8px 0;
   font-size: 33px;
   font-family: 'Jost', sans-serif;
+  font-weight: 300;
 }
 
 #current-week #weeksToGo {
@@ -178,6 +181,7 @@ body {
 
 #finishedText {
   font-size: 15vw;
+  font-weight: 300;
   margin: 120px 0;
 }
 
@@ -224,6 +228,7 @@ body {
     background: #45a6ab;
     border-radius: 20px;
     font-family: 'Jost', sans-serif;
+    font-weight: 300;
     color: white;
     text-shadow: 1px 1px 1px #97adaf;
     box-shadow: 1px 3px 20px #c9e3e3;
@@ -331,7 +336,7 @@ body {
   position: relative;
   display: inline-block;
 
-  .item-list {
+  #item-list {
     position: absolute;
     top: 80px;
     transform: translateX(-50%) scale(0);
@@ -348,9 +353,15 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
+    #forms-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
   }
 
-  .menu-button {
+  #menu-button {
     position: absolute;
     width: 60px;
     height: 60px;
@@ -362,8 +373,8 @@ body {
   }
 }
 
-.menu-button {
-  &:checked ~ .item-list {
+#menu-button {
+  &:checked ~ #item-list {
     transform: translateX(-50%) scale(1);
     border-radius: 20px;
     opacity: 1;
@@ -395,6 +406,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 2px 3px 5px #dbdbd9;
 }
 
 .custom-label {
@@ -471,6 +483,67 @@ input[type='number'] {
   font-size: 1.1em;
 }
 
+#tour-button {
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+// ### User Tour Styling ###
+.driver-popover.my-custom-popover-class {
+  box-shadow: 2px 3px 5px #dbdbd9;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 8px;
+  padding: 1.4rem;
+
+  .driver-popover-title {
+    color: #45a6ab;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.8rem;
+    text-shadow: none;
+  }
+
+  .driver-popover-description {
+    font-family: 'Nunito Sans', sans-serif;
+    color: #454b4b;
+    font-size: 1.1rem;
+  }
+
+  .driver-popover-close-btn {
+    color: #a9b6b6;
+  }
+
+  .driver-popover-prev-btn,
+  .driver-popover-next-btn {
+    text-shadow: none;
+    font-size: 0.8rem;
+    border: 1px solid #45a6ab;
+    border-radius: 5px;
+  }
+
+  .driver-popover-next-btn {
+    color: white;
+    background-color: #45a6ab;
+  }
+
+  .driver-popover-next-btn:hover {
+    background-color: #429b9f;
+  }
+
+  .driver-popover-prev-btn {
+    color: #45a6ab;
+  }
+
+  .driver-popover-progress-text {
+    color: #a9b6b6;
+  }
+}
+
+// ### Media Queries ###
+
 @media screen and (max-width: 745px) {
   #main-title {
     font-size: 5vw;
@@ -489,6 +562,10 @@ input[type='number'] {
 
   #close-button {
     font-size: 0.8rem;
+  }
+
+  #tour-button {
+    position: static;
   }
 }
 

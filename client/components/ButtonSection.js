@@ -34,6 +34,7 @@ class ButtonSection extends Component {
         <p id="intentionText">{this.props.intention}</p>
         <button
           className="main-button open-button"
+          id="need-reminder-button"
           onClick={this.handleGetReminder}
         >
           Need a reminder?

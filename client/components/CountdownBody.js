@@ -4,6 +4,7 @@ import CurrentWeek from './CurrentWeek';
 import ButtonSection from './ButtonSection';
 import NewChainMenu from './NewChainMenu';
 import { CompletedChain } from './CompletedChain';
+import UserTour from './UserTour';
 
 class CountdownBody extends Component {
   constructor(props) {
@@ -164,6 +165,7 @@ class CountdownBody extends Component {
               needReminderClicked={this.state.needReminderClicked}
             />
           </div>
+          <UserTour />
         </div>
       );
     }

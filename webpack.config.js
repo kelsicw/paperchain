@@ -29,6 +29,10 @@ module.exports = {
         exclude: [/node_modules/, /client\/stylesheets\/modules/],
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
   devServer: {
