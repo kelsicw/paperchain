@@ -26,11 +26,24 @@ const UserTour = () => {
             },
           },
           {
+            element: '#forms-container',
+            popover: {
+              title: 'Customize Your Countdown',
+              description: `Use this menu to customize your PaperChain countdown, set or update your intention, and add reminders.`,
+              side: 'top',
+              align: 'start',
+              onPrevClick: () => {
+                document.getElementById('menu-button').checked = false;
+                newDriverObj.movePrevious();
+              },
+            },
+          },
+          {
             element: '#create-new-chain-form',
             popover: {
               title: 'Start A New Chain',
-              description: `Enter the number of chain links you need on your chain, then click 'Create Chain'.`,
-              side: 'right',
+              description: `Enter the number of chain links you need on your chain (each link represents one week in your countdown), then click 'Create Chain'.`,
+              side: 'top',
               align: 'start',
             },
           },
@@ -39,7 +52,7 @@ const UserTour = () => {
             popover: {
               title: 'Set Your Intention',
               description:
-                'Setting an intention to focus on throughout your countdown will help you stay focused on the big picture.',
+                'Setting an intention to focus on throughout your countdown will help you keep the big picture in mind.',
               side: 'top',
               align: 'start',
             },
@@ -54,7 +67,7 @@ const UserTour = () => {
                 document.getElementById('menu-button').checked = false;
                 newDriverObj.moveNext();
               },
-              side: 'bottom',
+              side: 'top',
               align: 'start',
             },
           },
@@ -63,9 +76,13 @@ const UserTour = () => {
             popover: {
               title: 'Update Your Chain',
               description:
-                'Click your PaperChain to remove a link. Each link brings you one step closer to your goal!',
+                'Click your PaperChain to remove a link as you complete each week of your countdown. Each link brings you one step closer to your goal!',
               side: 'left',
               align: 'start',
+              onPrevClick: () => {
+                document.getElementById('menu-button').checked = true;
+                newDriverObj.movePrevious();
+              },
             },
           },
           {

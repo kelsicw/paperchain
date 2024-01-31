@@ -35,73 +35,75 @@ class NewChainMenu extends Component {
             </label>
           </div>
           <div id="item-list">
-            <div className="form" id="create-new-chain-form">
-              <form onSubmit={this.props.handleSubmit}>
-                <p>Create A New Chain</p>
-                <label className="custom-label">
-                  How many weeks until your event? <br />
+            <div id="forms-container">
+              <div className="form" id="create-new-chain-form">
+                <form onSubmit={this.props.handleSubmit}>
+                  <p>Create A New Chain</p>
+                  <label className="custom-label">
+                    How many weeks until your event? <br />
+                    <input
+                      type="number"
+                      max="100"
+                      min="1"
+                      value={this.props.inputText}
+                      onChange={this.props.handleInputChanged}
+                      id="newChainText"
+                      required
+                    />
+                  </label>
                   <input
-                    type="number"
-                    max="100"
-                    min="1"
-                    value={this.props.inputText}
-                    onChange={this.props.handleInputChanged}
-                    id="newChainText"
-                    required
-                  />
-                </label>
-                <input
-                  type="submit"
-                  value="Create Chain"
-                  className="secondary-button"
-                ></input>
-              </form>
-            </div>
+                    type="submit"
+                    value="Create Chain"
+                    className="secondary-button"
+                  ></input>
+                </form>
+              </div>
 
-            <div className="form" id="set-intention-form">
-              <form onSubmit={this.props.handleIntentionSubmit}>
-                <p>Set Your Intention</p>
-                <label className="custom-label">
-                  What is your 'why' for this process? <br />
+              <div className="form" id="set-intention-form">
+                <form onSubmit={this.props.handleIntentionSubmit}>
+                  <p>Set Your Intention</p>
+                  <label className="custom-label">
+                    What is your 'why' for this process? <br />
+                    <input
+                      type="text"
+                      value={this.props.intentionInput}
+                      onChange={this.props.handleIntentionChanged}
+                      id="newIntentionText"
+                      required
+                    />
+                  </label>
                   <input
-                    type="text"
-                    value={this.props.intentionInput}
-                    onChange={this.props.handleIntentionChanged}
-                    id="newIntentionText"
-                    required
-                  />
-                </label>
-                <input
-                  type="submit"
-                  value="Set Intention"
-                  className="secondary-button"
-                ></input>
-              </form>
-            </div>
+                    type="submit"
+                    value="Set Intention"
+                    className="secondary-button"
+                  ></input>
+                </form>
+              </div>
 
-            <div className="form" id="add-reminder-form">
-              <form
-                onSubmit={() =>
-                  this.addReminderToDB(event, this.props.reminderInput)
-                }
-              >
-                <p>Add A Reminder</p>
-                <label className="custom-label">
-                  Give yourself some encouragement. <br />
+              <div className="form" id="add-reminder-form">
+                <form
+                  onSubmit={() =>
+                    this.addReminderToDB(event, this.props.reminderInput)
+                  }
+                >
+                  <p>Add A Reminder</p>
+                  <label className="custom-label">
+                    Give yourself some encouragement. <br />
+                    <input
+                      type="text"
+                      value={this.props.reminderInput}
+                      onChange={this.props.handleReminderChanged}
+                      id="newReminder"
+                      required
+                    />
+                  </label>
                   <input
-                    type="text"
-                    value={this.props.reminderInput}
-                    onChange={this.props.handleReminderChanged}
-                    id="newReminder"
-                    required
-                  />
-                </label>
-                <input
-                  type="submit"
-                  value="Add Reminder"
-                  className="secondary-button"
-                ></input>
-              </form>
+                    type="submit"
+                    value="Add Reminder"
+                    className="secondary-button"
+                  ></input>
+                </form>
+              </div>
             </div>
           </div>
         </label>

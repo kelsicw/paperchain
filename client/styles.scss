@@ -353,6 +353,12 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
+    #forms-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
   }
 
   #menu-button {
