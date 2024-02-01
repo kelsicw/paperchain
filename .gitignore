@@ -1,7 +1,5 @@
-# General
 .DS_Store
 /build
 /.env
 
-# dependencies
 node_modules/

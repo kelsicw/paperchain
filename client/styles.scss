@@ -13,7 +13,6 @@ body {
   align-items: center;
   font-family: 'Nunito Sans', sans-serif;
   color: #db9828;
-  // position: relative;
   min-height: 90vh;
 }
 
@@ -89,9 +88,7 @@ body {
   align-items: center;
   width: 100%;
   height: 100%;
-  // margin-top: 15px;
   padding-top: 4rem;
-  // padding-bottom: 2.5rem;
 }
 
 #chain {
@@ -208,6 +205,12 @@ body {
   cursor: pointer;
 }
 
+.main-button:hover {
+  border: 2px solid #cd7029;
+  background-color: white;
+  color: #cd7029;
+}
+
 .modal {
   transition: opacity 0.5s var(--ease-3);
   padding: 0.5em;
@@ -219,6 +222,12 @@ body {
   color: #cd7029;
   background: rgb(255, 255, 255, 0.75);
   box-shadow: 25px 25px 75px #b2b8b8;
+
+  #reminder-and-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   h2 {
     font-style: italic;
@@ -233,6 +242,21 @@ body {
     text-shadow: 1px 1px 1px #97adaf;
     box-shadow: 1px 3px 20px #c9e3e3;
     opacity: 1;
+  }
+
+  #another-reminder-button {
+    margin: 0 0.5em 0.5em 0.5em;
+    padding: 1em 1.5em;
+    text-align: center;
+    background-color: #45a6ab;
+    border-radius: 20px;
+    border: none;
+  }
+
+  #another-reminder-button:hover {
+    background-color: #429b9f;
+    border: none;
+    color: white;
   }
 }
 
@@ -250,19 +274,13 @@ body {
   padding: 0.3em 0.55em;
   text-shadow: 0.5px 0.5px 0.5px #2f6e71;
   position: fixed;
-  background-color: white;
+  background: rgb(255, 255, 255, 0.75);
 }
 
 #close-button:hover {
   background-color: #d2e8e8;
   border: none;
   transition: 150ms;
-}
-
-.main-button:hover {
-  border: 2px solid #cd7029;
-  background-color: white;
-  color: #cd7029;
 }
 
 #intentionText {
@@ -558,6 +576,10 @@ input[type='number'] {
 
   .modal {
     font-size: 1em;
+  }
+
+  #another-reminder-button {
+    font-size: 0.7rem;
   }
 
   #close-button {

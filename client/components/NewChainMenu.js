@@ -91,6 +91,7 @@ class NewChainMenu extends Component {
                       type="text"
                       value={this.props.reminderInput}
                       onChange={this.props.handleReminderChanged}
+                      maxLength="255"
                       id="newReminder"
                       name="newReminder"
                       required

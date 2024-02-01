@@ -42,7 +42,16 @@ class ButtonSection extends Component {
           <button id="close-button" onClick={this.closeModal}>
             X
           </button>
-          <h2>{this.props.retrievedReminder}</h2>
+          <div id="reminder-and-button">
+            <h2>{this.props.retrievedReminder}</h2>
+            <button
+              className="secondary-button"
+              id="another-reminder-button"
+              onClick={this.handleGetReminder}
+            >
+              Get Another Reminder
+            </button>
+          </div>
         </dialog>
       </div>
     );
