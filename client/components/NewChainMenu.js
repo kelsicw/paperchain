@@ -7,9 +7,9 @@ class NewChainMenu extends Component {
     this.addReminderToDB = this.addReminderToDB.bind(this);
   }
 
-  addReminderToDB(event, value) {
+  addReminderToDB(event) {
     event.preventDefault();
-    const input = value;
+    const input = this.props.reminderInput;
     fetch('/api', {
       method: 'POST',
       headers: {
@@ -48,6 +48,7 @@ class NewChainMenu extends Component {
                       value={this.props.inputText}
                       onChange={this.props.handleInputChanged}
                       id="newChainText"
+                      name="newChainText"
                       required
                     />
                   </label>
@@ -69,6 +70,7 @@ class NewChainMenu extends Component {
                       value={this.props.intentionInput}
                       onChange={this.props.handleIntentionChanged}
                       id="newIntentionText"
+                      name="newIntentionText"
                       required
                     />
                   </label>
@@ -81,11 +83,7 @@ class NewChainMenu extends Component {
               </div>
 
               <div className="form" id="add-reminder-form">
-                <form
-                  onSubmit={() =>
-                    this.addReminderToDB(event, this.props.reminderInput)
-                  }
-                >
+                <form onSubmit={this.addReminderToDB}>
                   <p>Add A Reminder</p>
                   <label className="custom-label">
                     Give yourself some encouragement. <br />
@@ -94,6 +92,7 @@ class NewChainMenu extends Component {
                       value={this.props.reminderInput}
                       onChange={this.props.handleReminderChanged}
                       id="newReminder"
+                      name="newReminder"
                       required
                     />
                   </label>

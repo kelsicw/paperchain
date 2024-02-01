@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import paperchainLink from '../../public/paperchainLink.png';
 
 class ButtonSection extends Component {
   constructor(props) {
@@ -43,7 +42,6 @@ class ButtonSection extends Component {
           <button id="close-button" onClick={this.closeModal}>
             X
           </button>
-          {/* <img src={paperchainLink} /> */}
           <h2>{this.props.retrievedReminder}</h2>
         </dialog>
       </div>
