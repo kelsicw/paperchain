@@ -3,7 +3,7 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const PORT = 3001;
-const reminderController = require('./reminderController');
+const reminderController = require('../server/reminderController');
 
 // Parse JSON requests
 app.use(express.json());
