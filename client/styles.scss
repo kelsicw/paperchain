@@ -28,6 +28,7 @@ body {
   min-height: 75vh;
 }
 
+// Header
 #header {
   color: white;
   background-color: #db9828;
@@ -81,6 +82,7 @@ body {
   font-family: 'Courier New', Courier, monospace;
 }
 
+// Main
 #countdownBody {
   display: flex;
   flex-direction: column;
@@ -166,6 +168,7 @@ body {
   font-size: 19px;
 }
 
+// Completed Chain Display
 #finished {
   width: 100%;
   display: flex;
@@ -182,6 +185,7 @@ body {
   margin: 120px 0;
 }
 
+// Reminder Button
 #buttons-section {
   display: flex;
   flex-direction: column;
@@ -211,6 +215,7 @@ body {
   color: #cd7029;
 }
 
+// Modal Menu
 .modal {
   transition: opacity 0.5s var(--ease-3);
   padding: 0.5em;
@@ -501,6 +506,7 @@ input[type='number'] {
   font-size: 1.1em;
 }
 
+// User Tour
 #tour-button {
   border-radius: 50%;
   position: absolute;
@@ -510,7 +516,6 @@ input[type='number'] {
   margin-bottom: 2rem;
 }
 
-// ### User Tour Styling ###
 .driver-popover.my-custom-popover-class {
   box-shadow: 2px 3px 5px #dbdbd9;
   background: rgba(255, 255, 255, 1);
@@ -560,8 +565,7 @@ input[type='number'] {
   }
 }
 
-// ### Media Queries ###
-
+// Media Queries
 @media screen and (max-width: 745px) {
   #main-title {
     font-size: 5vw;

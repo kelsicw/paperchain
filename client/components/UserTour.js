@@ -1,16 +1,23 @@
+// Import the necessary React components and the driver.js library
 import React, { useEffect, useState } from 'react';
 import { driver } from 'driver.js';
 import 'driver.js/dist/driver.css';
 
+// Define the UserTour component that will guide users through a tutorial on using the app
 const UserTour = () => {
+  // State to hold the driver.js object
   const [driverObj, setDriverObj] = useState(null);
 
+  // Initialize the driver.js tour on component mount
   useEffect(() => {
     const initializeDriver = () => {
+      // Create a new driver.js instance with custom configuration
       const newDriverObj = driver({
+        // Driver.js configuration options
         showProgress: true,
         overlayColor: 'rgba(214, 214, 214, 0.75)',
         popoverClass: 'my-custom-popover-class',
+        // Define each step of the tour with target elements and popover content
         steps: [
           {
             element: '#menu-button',
@@ -107,6 +114,7 @@ const UserTour = () => {
 
     initializeDriver();
 
+    // Clean up the driver.js instance on component unmount
     return () => {
       if (driverObj) {
         driverObj.cleanup();
@@ -114,12 +122,14 @@ const UserTour = () => {
     };
   }, []);
 
+  // Handle the click event on the tour button (the question mark button)
   const handleClick = () => {
     if (driverObj) {
       driverObj.drive();
     }
   };
 
+  // Render the tour button
   return (
     <>
       <button

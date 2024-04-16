@@ -1,8 +1,10 @@
+// Import the database connection
 const db = require('./paperchainModels');
-const format = require('pg-format');
 
+// The reminderController contains the methods that query the database
 const reminderController = {};
 
+// The addReminder method adds a reminder provided by the user to the database
 reminderController.addReminder = (req, res, next) => {
   const { reminder } = req.body;
   res.locals.addedReminder = reminder;
@@ -16,6 +18,7 @@ reminderController.addReminder = (req, res, next) => {
     });
 };
 
+// The getReminder method retrieves a random reminder from the database. If no reminders have been added, it will send a message back to the client encouraging the user to add reminders.
 reminderController.getReminder = (req, res, next) => {
   const sqlString = `SELECT reminder_text FROM reminders ORDER BY RANDOM() LIMIT 1`;
   db.query(sqlString)

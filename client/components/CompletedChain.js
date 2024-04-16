@@ -1,9 +1,13 @@
+// Import the necessary React and JSConfetti libraries
 import React from 'react';
 import JSConfetti from 'js-confetti';
 
+// Define the CompletedChain component
 export const CompletedChain = (props) => {
+  // Create a new JSConfetti instance to throw confetti when chain is complete
   const jsConfetti = new JSConfetti();
 
+  // Add confetti animation to the page in varying colors
   jsConfetti.addConfetti({
     confettiColors: [
       '#cd7029',
@@ -18,6 +22,7 @@ export const CompletedChain = (props) => {
     confettiNumber: 400,
   });
 
+  // Render the "Completed Chain" UI
   return (
     <div id="finished">
       <h2 id="finishedText">YOU MADE IT!</h2>

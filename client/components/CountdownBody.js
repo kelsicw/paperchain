@@ -1,3 +1,4 @@
+// Import necessary dependencies
 import React, { Component } from 'react';
 import Chain from './Chain';
 import CurrentWeek from './CurrentWeek';
@@ -6,7 +7,9 @@ import NewChainMenu from './NewChainMenu';
 import { CompletedChain } from './CompletedChain';
 import UserTour from './UserTour';
 
+// Define the main CountdownBody component
 class CountdownBody extends Component {
+  // Initialize the component's state
   constructor(props) {
     super(props);
     this.state = {
@@ -22,6 +25,7 @@ class CountdownBody extends Component {
       needReminderClicked: false,
     };
 
+    // Bind event handler functions to the component instance
     this.handleInputChanged = this.handleInputChanged.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleLinkClick = this.handleLinkClick.bind(this);
@@ -32,10 +36,12 @@ class CountdownBody extends Component {
     this.getReminder = this.getReminder.bind(this);
   }
 
+  // Check if the countdown has ended and update state accordingly
   componentDidUpdate() {
     this.checkCountdownEnded();
   }
 
+  // Update the countdownEnded state if the current week exceeds the total weeks
   checkCountdownEnded() {
     const { currentWeek, totalWeeks, countdownEnded } = this.state;
     if (currentWeek > totalWeeks && !countdownEnded) {
@@ -43,7 +49,7 @@ class CountdownBody extends Component {
     }
   }
 
-  //function to update total weeks when user submits it to create a new chain
+  // The following are event handler functions for various user interactions (creating a new chain, setting an intention, etc.)
   handleInputChanged(event) {
     this.setState({
       inputText: event.target.value,
@@ -105,6 +111,7 @@ class CountdownBody extends Component {
     });
   }
 
+  // Function to fetch a reminder from the server
   getReminder(callback) {
     fetch('/api')
       .then((response) => response.json())
@@ -121,17 +128,19 @@ class CountdownBody extends Component {
         );
       });
   }
-
+  // Render the CountdownBody component
   render() {
     const { countdownEnded } = this.state;
-
+    // If the countdown has ended, render the CompletedChain component
     if (countdownEnded) {
       return (
         <>
           <CompletedChain onRestart={this.handleRestart} />
         </>
       );
-    } else {
+    }
+    // Otherwise, render the main countdown components (the chain, new chain menu, current week, etc.)
+    else {
       return (
         <div id="countdownBody">
           <Chain

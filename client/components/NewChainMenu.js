@@ -1,12 +1,16 @@
+// Import the necessary React components
 import React, { Component } from 'react';
 
+// Define the NewChainMenu component (the modal that allows for adding a new chain, intentions, and reminders)
 class NewChainMenu extends Component {
   constructor() {
     super();
 
+    // Bind the addReminderToDB method to the component instance
     this.addReminderToDB = this.addReminderToDB.bind(this);
   }
 
+  // Function to add a new reminder to the database
   addReminderToDB(event) {
     event.preventDefault();
     const input = this.props.reminderInput;
@@ -24,6 +28,7 @@ class NewChainMenu extends Component {
   }
 
   render() {
+    // Render the new chain menu with forms for creating a new chain, setting an intention, and adding reminders
     return (
       <div id="new-chain-menu">
         <label className="menu-button-wrapper">
@@ -36,6 +41,7 @@ class NewChainMenu extends Component {
           </div>
           <div id="item-list">
             <div id="forms-container">
+              {/* Form for creating a new chain */}
               <div className="form" id="create-new-chain-form">
                 <form onSubmit={this.props.handleSubmit}>
                   <p>Create A New Chain</p>
@@ -59,7 +65,7 @@ class NewChainMenu extends Component {
                   ></input>
                 </form>
               </div>
-
+              {/* Form for setting an intention */}
               <div className="form" id="set-intention-form">
                 <form onSubmit={this.props.handleIntentionSubmit}>
                   <p>Set Your Intention</p>
@@ -81,7 +87,7 @@ class NewChainMenu extends Component {
                   ></input>
                 </form>
               </div>
-
+              {/* Form for adding a reminder */}
               <div className="form" id="add-reminder-form">
                 <form onSubmit={this.addReminderToDB}>
                   <p>Add A Reminder</p>
