@@ -113,8 +113,7 @@ class CountdownBody extends Component {
 
   // Function to fetch a reminder from the server
   getReminder(callback) {
-    const baseUrl = process.env.REACT_APP_API_BASE_URL;
-    fetch(`${baseUrl}/api`)
+    fetch('/api')
       .then((response) => response.json())
       .then((data) => {
         this.setState(
