@@ -8,8 +8,6 @@
     A Mindful Countdown
     <br />
     <br />
-    <a href="">View Demo</a>
-    <br />
   </h3>
 </div>
 
