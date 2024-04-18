@@ -8,8 +8,6 @@
     A Mindful Countdown
     <br />
     <br />
-    <a href="">View Demo</a>
-    <br />
   </h3>
 </div>
 
@@ -34,7 +32,7 @@
 
 ## File Structure
 
-To navigate the code with ease, please refer to this file structure:
+To navigate the codebase, please refer to this file structure:
 
 <ul>
   <li>Index.html</li>
