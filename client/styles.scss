@@ -256,6 +256,7 @@ body {
     background-color: #45a6ab;
     border-radius: 20px;
     border: none;
+    font-family: 'Nunito Sans', sans-serif;
   }
 
   #another-reminder-button:hover {
@@ -545,6 +546,7 @@ input[type='number'] {
     font-size: 0.8rem;
     border: 1px solid #45a6ab;
     border-radius: 5px;
+    font-family: 'Nunito Sans', sans-serif;
   }
 
   .driver-popover-next-btn {
@@ -562,6 +564,7 @@ input[type='number'] {
 
   .driver-popover-progress-text {
     color: #a9b6b6;
+    font-family: 'Nunito Sans', sans-serif;
   }
 }
 
@@ -592,6 +595,7 @@ input[type='number'] {
 
   #tour-button {
     position: static;
+    margin: 0;
   }
 }
 
