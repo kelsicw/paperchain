@@ -41,7 +41,12 @@ app.use((err, req, res, next) => {
   return res.status(errorObj.status).json(errorObj.message);
 });
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server listening on port: ${PORT}...`);
-});
+// Start the server (if running locally, not on Vercel)
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`Server listening on port: ${PORT}...`);
+  });
+}
+
+// Export the app for vercel serverless functions
+module.exports = app;
